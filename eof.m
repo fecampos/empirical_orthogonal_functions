@@ -8,9 +8,7 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 F = detrend(ndata,'constant');
 
-R = F'*F;
-
-[C,L,CC,~] = svds(double(R),N);
+[C,L,CC,~] = svds(double(F),N);
 
 PC = F*CC;
 
