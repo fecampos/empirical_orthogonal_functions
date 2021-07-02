@@ -8,7 +8,7 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 [nt nx] = size(ndata);
 
-ndata = hilbert(ndata); ndata = ndata(round(0.1*nt)+1:nt-round(0.1*nt)-1,:); round(0.1*nt)
+ndata = hilbert(ndata); 
 
 F = detrend(ndata,'constant');
 
