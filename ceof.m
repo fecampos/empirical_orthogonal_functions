@@ -12,9 +12,7 @@ ndata = hilbert(ndata);
 
 F = detrend(ndata,'constant');
 
-R = F'*F;
-
-[C,L,CC,~] = svds(R,N);
+[C,L,CC,~] = svds(double(F),N);
 
 PC = F*CC;
 
