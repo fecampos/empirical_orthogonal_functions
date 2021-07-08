@@ -37,10 +37,8 @@ cpha(ind,:) = spatial_pha'; cpha = reshape(cpha,dx,dy,N);
 
 re_space(ind,:) = e'; re_space = reshape(re_space,dx,dy,N);
 
-dsum = diag(L)./trace(L);
+L = diag(L).^2;
 
-for i=1:N
-   expvar(i)=fix((dsum(i)*100/sum(dsum))*N)/N;
-end
+expvar = 100*L/sum(L);
 
 return
