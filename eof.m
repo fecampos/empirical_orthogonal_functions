@@ -19,10 +19,9 @@ end
 
 eof = NaN(dx*dy,N); eof(ind,:) = e'; eof = reshape(eof,dx,dy,N);
 
-dsum = diag(L)./trace(L);
+L = diag(L).^2;
 
-for i=1:N
-   expvar(i)=fix((dsum(i)*100/sum(dsum))*10)/10;
-end
+expvar = 100*L/sum(L);
+
 
 return
