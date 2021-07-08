@@ -23,5 +23,4 @@ L = diag(L).^2;
 
 expvar = 100*L/sum(L);
 
-
 return
