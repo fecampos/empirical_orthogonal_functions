@@ -8,9 +8,9 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 [nt nx] = size(ndata);
 
-ndata = hilbert(ndata); 
-
 F = detrend(ndata,'constant');
+
+ndata = hilbert(ndata); 
 
 [C,L,CC,~] = svds(double(F),N);
 
