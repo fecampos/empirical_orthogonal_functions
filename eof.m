@@ -1,5 +1,18 @@
 function [eof pc expvar] = eof(data,N)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    code to compute first N empirical orthogonal functions (EOFs)    %
+%                                                                     %
+% author: Fernando Campos (fcampos@igp.gob.pe)                        %
+% Description:                                                        %
+% input: data -> variable with dim nx,ny,nt) with NaN                 %
+% input: N -> number of first N modes solved (integer)                %
+%                                                                     %
+% output: eof (spatial first N modes with dimension nx ny N)          %
+% output: PC (first N principal components with dimension nt N)       %
+% output: expvar (fraction of total variance explained by 1st N modes)%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 [dx dy dt] = size(data);
 
 data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data(:,ind);
