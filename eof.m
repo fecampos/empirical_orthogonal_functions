@@ -5,7 +5,7 @@ function [eof pc expvar] = eof(data,N)
 %                                                                     %
 % author: Fernando Campos (fcampos@igp.gob.pe)                        %
 % Description:                                                        %
-% input: data -> variable with dim nx,ny,nt) with NaN                 %
+% input: data -> variable with (dim nx,ny,nt) with NaN                %
 % input: N -> number of first N modes solved (integer)                %
 %                                                                     %
 % output: eof (spatial first N modes with dimension nx ny N)          %
