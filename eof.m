@@ -19,7 +19,7 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 [nt nx] = size(ndata);
 
-F = detrend(ndata,'constant');
+F = detrend(ndata,'constant')./repmat(std(ndata),[nt 1]);
 
 [C,L,CC,~] = svds(double(F),N);
 
