@@ -15,9 +15,6 @@ function [camp cpha tamp tpha expvar] = ceof(data,N)
 % output: expvar (fraction of total variance explained by 1st N modes)         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% [time x y] & time > x & time > y
-
 [dx dy dt] = size(data);
 
 data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data(:,ind);
