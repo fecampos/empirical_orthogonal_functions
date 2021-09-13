@@ -1,5 +1,7 @@
 function [camp cpha tamp tpha expvar] = ceof(data,N)
 
+%[nt nx ny] = size(data);
+
 % [time x y] & time > x & time > y
 
 [dx dy dt] = size(data);
