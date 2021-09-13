@@ -24,7 +24,8 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 [nt nx] = size(ndata);
 
-ndata = detrend(ndata,'constant')./repmat(std(ndata),[nt 1]);
+%ndata = detrend(ndata,'constant')./repmat(std(ndata),[nt 1]);
+ndata = detrend(ndata,'constant');
 
 F = hilbert(ndata); 
 
