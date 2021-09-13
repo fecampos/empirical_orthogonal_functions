@@ -1,6 +1,20 @@
 function [camp cpha tamp tpha expvar] = ceof(data,N)
 
-%[nt nx ny] = size(data);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    code to compute first N complex empirical orthogonal functions (CEOFs)    %
+%                                                                              %
+% author: Fernando Campos (fcampos@igp.gob.pe)                                 %
+% Description:                                                                 %
+% input: data -> variable with (dim nx,ny,nt) with NaN                         %
+% input: N -> number of first N modes solved (integer)                         %
+%                                                                              %
+% output: camp (spatial first N modes of amplitude with dimension nx ny N)     %
+% output: cpha (spatial first N modes of phase with dimension nx ny N)         %
+% output: tamp (first N principal components of amplitude with dimension nt N) %
+% output: tpha (first N principal components of phase with dimension nt N)     %
+% output: expvar (fraction of total variance explained by 1st N modes)         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % [time x y] & time > x & time > y
 
