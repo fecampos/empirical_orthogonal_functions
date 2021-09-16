@@ -21,8 +21,7 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 [nt nx] = size(ndata);
 
-%ndata = detrend(ndata,'constant')./repmat(std(ndata),[nt 1]);
-ndata = detrend(ndata,'constant');
+ndata = detrend(ndata,'constant')/sqrt(nt);
 
 F = hilbert(ndata); 
 
@@ -31,7 +30,7 @@ F = hilbert(ndata);
 PC = F*CC;
 
 for i = 1:N
-  e(i,:) = squeeze(CC(:,i))';
+  e(i,:) = squeeze(CC(:,i))'*sqrt(nt);
   pc(i,:) = squeeze(PC(:,i))';
 end
 
