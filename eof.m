@@ -19,14 +19,14 @@ data = reshape(data,dx*dy,dt)'; ind = find(~isnan(data(1,:))); ndata(:,:) = data
 
 [nt nx] = size(ndata);
 
-F = detrend(ndata,'constant')./repmat(std(ndata),[nt 1]);
+F = detrend(ndata,'constant')/sqrt(nt);
 
 [C,L,CC,~] = svds(double(F),N);
 
 PC = F*CC;
 
 for i = 1:N
-  e(i,:) = squeeze(CC(:,i))';
+  e(i,:) = squeeze(CC(:,i))'*sqrt(nt);
   pc(i,:) = squeeze(PC(:,i))';
 end
 
