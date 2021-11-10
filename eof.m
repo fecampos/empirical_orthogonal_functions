@@ -3,7 +3,7 @@ function [eof pc expvar] = eof(data,N)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    code to compute first N empirical orthogonal functions (EOFs)    %
 %                                                                     %
-% author: Fernando Campos (fcampos@igp.gob.pe)                        %
+% author: Fernando Campos (fcampos@cicese.edu.mx                      %
 % Description:                                                        %
 % input: data -> variable with (dim nx,ny,nt) with NaN                %
 % input: N -> number of first N modes solved (integer)                %
