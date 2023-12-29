@@ -1,4 +1,5 @@
-# Empirical Orthogonal Functions in Matlab
+# Empirical Orthogonal Functions in Matlab (now a jupyter notebook version)
+
 Matlab functions to compute the empirical orthogonal function (EOF) and its complex version (CEOF).
 
 # Getting started eof.m:
